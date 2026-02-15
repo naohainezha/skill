@@ -1,0 +1,90 @@
+========================================
+  V4.0 问题修复完成
+========================================
+
+【问题描述】
+
+错误信息：
+  NameError: name 'SETTINGS' is not defined
+
+错误位置：
+  crawler_v4.py, line 294
+  COOKIES_PATH = Path(SETTINGS.cookies_file)
+
+【原因分析】
+
+COOKIES_PATH 在模块级别定义（第294行），
+此时引用了 SETTINGS.cookies_file
+
+但是，SETTINGS对象原本是在文件末尾的
+if __name__ == "__main__": 块中创建的
+
+当模块导入时，第294行就会执行，但此时
+SETTINGS对象还不存在，导致 NameError
+
+【修复方案】
+
+修改了 crawler_v4.py：
+
+1. 在模块级别创建默认 SETTINGS 对象（第59行）
+   SETTINGS = Settings()
+
+2. 创建 get_cookies_path() 函数（第66行）
+   def get_cookies_path():
+       return Path(SETTINGS.cookies_file)
+
+3. 修改 ensure_login_and_cookies() 函数
+   使用 get_cookies_path() 而不是 COOKIES_PATH
+
+4. 更新 if __name__ == "__main__": 块
+   从环境变量更新 SETTINGS 字段，而不是重新创建
+
+【修复内容】
+
+修改前：
+  COOKIES_PATH = Path(SETTINGS.cookies_file)  # 第294行
+  # ...
+  if __name__ == "__main__":
+      SETTINGS = Settings(...)  # 第472行
+
+修改后：
+  SETTINGS = Settings()  # 第59行（模块级别）
+  # ...
+  def get_cookies_path():
+      return Path(SETTINGS.cookies_file)  # 第66行
+  # ...
+  if __name__ == "__main__":
+      SETTINGS.keywords = [...]  # 更新字段
+      # ...
+
+【测试结果】
+
+测试脚本：test_fix.py
+
+[1/3] 导入模块...
+      ✓ 导入成功
+
+[2/3] 检查SETTINGS...
+      SETTINGS.keywords = ['眼镜']
+      SETTINGS.target_count = 100
+      SETTINGS.cookies_file = cookies.json
+
+[3/3] 检查get_cookies_path...
+      get_cookies_path() = cookies.json
+
+✓ 所有测试通过！
+
+【可以正常运行】
+
+启动命令：
+  python crawler_v4.py
+
+或双击：
+  start_v4.py
+
+或环境检查：
+  check_env_v4.py
+
+========================================
+  修复完成
+========================================

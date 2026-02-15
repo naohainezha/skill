@@ -1,0 +1,79 @@
+========================================
+  如何启动小红书爬虫 V4.0
+========================================
+
+【方法1：最简单 - 直接运行Python】
+
+打开命令行（CMD），依次输入：
+
+1. cd xiaohongshu-crawler
+2. python crawler_v4.py
+
+按回车键执行
+
+【方法2：双击 Python 启动器】
+
+双击文件：start_v4.py
+
+【方法3：双击 go_v4.bat】
+
+双击文件：go_v4.bat
+
+【方法4：双击 启动v4.bat】
+
+双击文件：启动v4.bat
+
+【如果所有方法都不行】
+
+1. 打开命令行（Win+R，输入cmd，回车）
+
+2. 进入目录：
+   cd D:\xiaohongshu-crawler
+
+3. 运行：
+   python crawler_v4.py
+
+4. 按回车键
+
+5. 等待浏览器打开
+6. 扫码登录
+7. 等待采集完成
+
+【常见问题】
+
+Q: 双击没反应？
+A: 右键 -> 使用Python打开
+
+Q: 找不到Python？
+A: 检查Python是否安装：
+   python --version
+
+Q: 提示缺少模块？
+A: 安装依赖：
+   pip install playwright python-dotenv pydantic rich slugify
+
+【手动安装依赖】
+
+打开命令行，依次运行：
+
+1. pip install playwright
+2. pip install python-dotenv
+3. pip install pydantic
+4. pip install rich
+5. pip install slugify
+6. playwright install chromium
+
+【完整手动流程】
+
+1. 打开命令行（CMD）
+2. cd D:\xiaohongshu-crawler
+3. pip install -r requirements_refined.txt
+4. playwright install chromium
+5. python crawler_v4.py
+6. 扫码登录
+7. 等待完成
+8. 查看 output 目录
+
+========================================
+推荐：直接在命令行运行 python crawler_v4.py
+========================================

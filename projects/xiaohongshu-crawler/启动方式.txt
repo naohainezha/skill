@@ -1,0 +1,36 @@
+========================================
+  小红书爬虫 - 启动方式
+========================================
+
+【方法1：最简单 - 双击 go.bat】
+1. 找到 go.bat 文件
+2. 双击打开
+3. 等待浏览器
+4. 扫码登录
+5. 完成
+
+【方法2：使用 Python 启动器】
+在命令行运行：
+cd xiaohongshu-crawler
+python launcher.py
+
+【方法3：直接运行爬虫】
+在命令行运行：
+cd xiaohongshu-crawler
+python crawler_v3.py
+
+【方法4：使用 PowerShell】
+右键 start.ps1 -> 使用PowerShell运行
+
+【如果都打不开】
+1. 打开命令行（Win+R -> cmd）
+2. 输入：cd xiaohongshu-crawler
+3. 输入：python launcher.py
+4. 按回车
+
+【故障排除】
+- 查看 TROUBLESHOOTING.md
+- 查看 启动说明.txt
+- 查看错误信息
+
+========================================

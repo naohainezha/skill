@@ -1,0 +1,5 @@
+playwright==1.48.0
+python-dotenv==1.0.1
+pydantic==2.9.2
+rich==13.8.1
+slugify==0.0.1

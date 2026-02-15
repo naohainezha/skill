@@ -1,0 +1,206 @@
+========================================
+  V4.0 登录时间优化
+========================================
+
+【更新内容】
+
+1. 增加扫码登录等待时间
+   - 原来：120秒（2分钟）
+   - 现在：600秒（10分钟）
+   - 可在 .env 文件中配置
+
+2. 改进登录提示信息
+   - 显示具体的等待时间
+   - 更清晰的登录指引
+   - Cookie保存状态提示
+
+【配置文件】
+
+.env 文件新增配置项：
+
+# 登录超时时间（秒）- 默认600秒（10分钟）
+LOGIN_TIMEOUT=600
+
+【配置说明】
+
+LOGIN_TIMEOUT 参数：
+
+单位：秒
+
+建议值：
+  - 600  - 10分钟（默认，推荐）
+  - 900  - 15分钟（如果你需要更多时间）
+  - 1200 - 20分钟（非常充裕）
+
+示例：
+  LOGIN_TIMEOUT=600   # 10分钟
+  LOGIN_TIMEOUT=900   # 15分钟
+  LOGIN_TIMEOUT=1200  # 20分钟
+
+【登录流程】
+
+1. 运行爬虫
+   python crawler_v4.py
+
+2. 等待浏览器打开
+
+3. 查看提示信息：
+   [yellow]脚本将等待最多 10分钟...[/yellow]
+   [yellow]请使用小红书APP扫描屏幕上的二维码登录[/yellow]
+
+4. 使用小红书APP扫码
+
+5. 在APP中确认登录
+
+6. 看到提示：
+   [bold green]登录成功！正在保存Cookie...[/bold green]
+   [bold green]Cookie 已成功保存到: cookies.json[/bold green]
+   [green]下次运行时将自动使用保存的Cookie，无需重复登录[/green]
+
+【Cookie保存】
+
+保存位置：
+  cookies.json
+
+保存时机：
+  - 首次登录成功后
+  - 检测到Cookie失效重新登录后
+
+Cookie有效期：
+  - 通常7-14天
+  - 过期后需要重新登录
+  - 重新登录会自动更新Cookie
+
+【自动登录】
+
+检测到已保存的Cookie时：
+  ✓ 自动加载Cookie
+  ✓ 自动登录
+  ✓ 直接开始采集
+  ✓ 无需重复扫码
+
+Cookie失效时：
+  ✓ 自动删除旧Cookie
+  ✓ 引导重新登录
+  ✓ 登录成功后保存新Cookie
+
+【登录失败处理】
+
+如果超过配置的登录超时时间：
+  [bold red]登录超时！等待时间超过 10分钟。[/bold red]
+  [yellow]请重新运行脚本并尽快扫码登录。[/yellow]
+
+解决方法：
+  1. 重新运行爬虫
+  2. 准备好小红书APP
+  3. 浏览器打开后立即扫码
+  4. 或增加 LOGIN_TIMEOUT 时间
+
+【修改登录时间】
+
+编辑 .env 文件：
+
+方法1：增加时间
+  LOGIN_TIMEOUT=900   # 15分钟
+
+方法2：减少时间（如果你能快速登录）
+  LOGIN_TIMEOUT=300   # 5分钟
+
+方法3：使用默认（推荐）
+  LOGIN_TIMEOUT=600   # 10分钟
+
+【登录技巧】
+
+1. 提前准备
+   - 打开小红书APP
+   - 确保网络稳定
+   - 准备好扫码
+
+2. 快速操作
+   - 浏览器打开后立即扫码
+   - 在APP中快速确认
+   - 不要关闭浏览器
+
+3. 注意事项
+   - 扫码后等待一会儿
+   - 可能需要输入验证码
+   - 确认授权后才会成功
+
+4. 失败重试
+   - 如果超时，重新运行
+   - 删除 cookies.json 重新登录
+   - 检查网络连接
+
+【完整配置示例】
+
+.env 文件完整示例：
+
+# 搜索关键词
+KEYWORDS=眼镜
+
+# 目标采集数量
+TARGET_COUNT=100
+
+# 页面加载超时（秒）
+PAGE_LOAD_TIMEOUT=60
+
+# 是否使用无头模式
+HEADLESS=False
+
+# 请求之间的延迟（秒）
+SLEEP_BETWEEN_REQUESTS=3.5
+
+# 滚动之间的延迟（秒）
+SLEEP_BETWEEN_SCROLLS=1.5
+
+# 输出目录
+OUTPUT_DIR=output
+
+# 调试信息目录
+DEBUG_DIR=output/debug
+
+# Cookies文件路径
+COOKIES_FILE=cookies.json
+
+# 登录超时时间（秒）- 默认600秒（10分钟）
+LOGIN_TIMEOUT=600
+
+========================================
+  更新完成
+========================================
+
+【修改的文件】
+
+1. crawler_v4.py
+   - Settings 类新增 login_timeout 参数
+   - ensure_login_and_cookies 函数优化登录提示
+   - 使用配置的登录超时时间
+   - 更清晰的Cookie保存提示
+
+2. .env
+   - 新增 LOGIN_TIMEOUT 配置项
+   - 默认值：600秒（10分钟）
+
+【使用方法】
+
+运行爬虫：
+  python crawler_v4.py
+
+修改配置：
+  编辑 .env 文件
+  修改 LOGIN_TIMEOUT 值
+
+重新登录：
+  删除 cookies.json
+  重新运行爬虫
+
+【测试】
+
+验证配置：
+  python -c "import crawler_v4; print(crawler_v4.SETTINGS.login_timeout)"
+
+应该显示：600
+
+========================================
+  优化完成
+========================================

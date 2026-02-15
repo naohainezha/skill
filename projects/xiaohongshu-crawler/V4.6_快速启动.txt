@@ -1,0 +1,182 @@
+# V4.6 快速启动
+
+## 主要更新
+
+✅ **支持UUID格式**：小红书笔记URL使用UUID格式
+✅ **兼容传统格式**：同时支持`/explore/`等传统格式
+✅ **改进选择器**：更灵活的元素识别
+✅ **增强验证**：更强的URL格式验证
+
+## 问题描述
+
+V4.5运行时找不到笔记元素（0个），原因是：
+
+**小红书笔记URL格式已改变：**
+
+```html
+❌ 旧格式（不支持）:
+https://www.xiaohongshu.com/explore/64a1b2c3
+
+✅ 新格式（UUID）:
+https://www.xiaohongshu.com/3ca6607e-d4a5-4cb9-b455-a746713d8283
+```
+
+## UUID格式
+
+```
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+3ca6607e-d4a5-4cb9-b455-a746713d8283
+```
+
+## 快速开始
+
+```bash
+cd D:\xiaohongshu-crawler
+python crawler_v4.py
+```
+
+## 调试输出
+
+```
+找到 25 个笔记元素
+找到的笔记URL示例：
+  [1] https://www.xiaohongshu.com/3ca6607e-d4a5-4cb9-b455-a746713d8283
+  [2] https://www.xiaohongshu.com/83074709-0d05-4d1c-9d38-24a8e910d914
+  [3] https://www.xiaohongshu.com/0b84da4e-3984-4603-a2f2-72a806e5494d
+```
+
+## 预期效果
+
+### 正常流程
+1. ✅ 打开搜索页面
+2. ✅ 找到笔记元素（支持UUID）
+3. ✅ 滚动到元素位置
+4. ✅ 点击笔记
+5. ✅ 进入笔记详情页（UUID格式）
+6. ✅ 收集详情
+7. ✅ 返回搜索页
+
+### 成功标志
+```
+✅ 成功采集: 眼镜推荐...
+✅ 任务完成！
+JSON文件路径: output/notes_*.json
+CSV文件路径: output/notes_*.csv
+```
+
+## 问题排查
+
+### 问题：仍然找不到笔记（0个）
+
+**检查输出**：
+```
+找到 0 个笔记元素
+```
+
+**查看截图**：
+```
+output\debug\search_page_眼镜.png
+```
+
+**可能原因**：
+1. 页面未加载完成
+2. 笔记元素被遮挡
+3. 需要滚动才能加载
+
+**解决方法**：
+1. 检查网络连接
+2. 增加等待时间
+3. 手动滚动页面
+
+### 问题：找到笔记但无法点击
+
+**检查输出**：
+```
+[yellow]点击笔记失败: ...[/yellow]
+```
+
+**查看截图**：
+```
+output\debug\click_failed_0.png
+```
+
+**可能原因**：
+1. 元素不可见
+2. 元素被遮挡
+3. 滚动位置不对
+
+**解决方法**：
+1. 查看截图分析
+2. 调整滚动逻辑
+3. 尝试不同的点击方法
+
+### 问题：点击后未进入详情页
+
+**检查输出**：
+```
+[yellow]警告：可能没有进入笔记详情页，当前URL: xxx[/yellow]
+```
+
+**查看截图**：
+```
+output\debug\after_click_0.png
+output\debug\not_detail_page_0.png
+```
+
+**检查URL**：
+- ✅ UUID格式：`/3ca6607e-d4a5-4cb9-b455-a746713d8283`
+- ✅ 传统格式：`/explore/64a1b2c3`
+- ❌ 其他格式：说明URL验证有问题
+
+**解决方法**：
+1. 确认URL格式
+2. 检查详情页选择器
+3. 增加等待时间
+
+## 查看截图
+
+### Windows
+```cmd
+start output\debug\search_page_眼镜.png
+```
+
+### Mac/Linux
+```bash
+open output/debug/search_page_眼镜.png
+```
+
+## 配置
+
+修改 `.env` 文件（可选）：
+
+```env
+TARGET_COUNT=10                           # 采集数量
+SAVE_DEBUG_SCREENSHOTS=true               # 保存调试截图
+```
+
+## 与之前版本对比
+
+| 特性 | V4.5 | V4.6 |
+|------|------|------|
+| URL格式支持 | 传统格式 | UUID + 传统 |
+| 选择器 | 特定href | 所有链接+正则 |
+| URL验证 | 传统格式 | UUID + 传统 |
+| 详情页检测 | 传统格式 | UUID + 传统 |
+| 笔记识别 | 0个 | 正常 |
+
+## 总结
+
+V4.6 修复了URL格式问题：
+
+**核心改进：**
+1. ✅ 支持UUID格式笔记URL
+2. ✅ 兼容传统格式
+3. ✅ 更灵活的选择器
+4. ✅ 更强的URL验证
+
+**UUID格式示例：**
+```
+https://www.xiaohongshu.com/3ca6607e-d4a5-4cb9-b455-a746713d8283
+```
+
+现在可以正确识别小红书的笔记链接了！

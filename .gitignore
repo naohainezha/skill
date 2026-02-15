@@ -2,6 +2,7 @@
 .env
 cookies.json
 cookies.txt
+settings.json
 
 # Python
 __pycache__/
@@ -13,9 +14,24 @@ __pycache__/
 *.avi
 *.mkv
 
+# Data/Logs
+*.db
+*.log
+
+# Browser data
+browser_data/
+playwright_profile/
+
 # OS
 .DS_Store
 Thumbs.db
+nul
 
 # Temp
 *.tmp
+
+# Output
+output/
+data/
+Volume/
+.bizyair_cache/

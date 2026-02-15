@@ -1,0 +1,138 @@
+# V4.4 快速启动
+
+## 主要更新
+
+✅ **采集数量**: 10条（快速测试）
+✅ **调试截图**: 自动保存每一步截图
+✅ **URL验证**: 检测是否进入笔记详情页
+✅ **详细日志**: 显示当前URL和状态
+
+## 快速开始
+
+```bash
+cd D:\xiaohongshu-crawler
+python crawler_v4.py
+```
+
+## 调试输出
+
+```
+📄 [1/10] 点击笔记...
+[dim]滚动到笔记位置 (y=450)...[/dim]
+✓ 点击成功（方法1）
+[dim]当前URL: https://www.xiaohongshu.com/explore/123456[/dim]
+[dim]已保存点击后截图: after_click_0.png[/dim]
+✓ 笔记详情页加载成功
+✅ 成功采集: 眼镜推荐...
+```
+
+## 调试文件
+
+```
+output/debug/
+├── after_click_0.png       # 点击后的截图
+├── after_click_1.png       # 第2个点击后的截图
+├── not_detail_page_0.png  # 未进入详情页（警告）
+└── click_failed_0.png     # 点击失败（错误）
+```
+
+## 问题诊断
+
+### 问题：未进入笔记详情页
+
+看到这个提示：
+```
+[yellow]警告：可能没有进入笔记详情页，当前URL: xxx[/yellow]
+[blue]已保存截图: output/debug/not_detail_page_0.png[/blue]
+```
+
+**解决方法**：
+1. 打开截图查看
+2. 检查URL是否包含 `/explore/`、`/discovery/`、`/note/`
+3. 查看页面上显示的内容
+
+### 问题：点击失败
+
+看到这个提示：
+```
+[yellow]点击笔记失败: ...[/yellow]
+[blue]已保存截图: output/debug/click_failed_0.png[/blue]
+```
+
+**解决方法**：
+1. 打开截图查看
+2. 检查页面结构
+3. 可能需要调整选择器
+
+## 查看截图
+
+### Windows
+```cmd
+start output\debug\after_click_0.png
+```
+
+### Mac/Linux
+```bash
+open output/debug/after_click_0.png
+```
+
+## 配置
+
+修改 `.env` 文件（可选）：
+
+```env
+TARGET_COUNT=10                           # 采集数量
+SAVE_DEBUG_SCREENSHOTS=true               # 保存调试截图
+```
+
+## 预期流程
+
+1. ✅ 打开搜索页面
+2. ✅ 找到笔记元素
+3. ✅ 滚动到元素位置
+4. ✅ 点击笔记
+5. ✅ **显示当前URL**
+6. ✅ **保存截图**
+7. ✅ **验证是否进入详情页**
+8. ✅ 收集详情
+9. ✅ 返回搜索页
+
+## 成功标志
+
+```
+✅ 任务完成！
+JSON文件路径: output/notes_*.json
+CSV文件路径: output/notes_*.csv
+```
+
+## 下一步
+
+### 如果成功
+1. 增加采集数量：修改 `TARGET_COUNT=100`
+2. 关闭调试截图：修改 `SAVE_DEBUG_SCREENSHOTS=false`
+3. 重新运行
+
+### 如果失败
+1. 查看 `output/debug/` 目录截图
+2. 分析失败原因
+3. 检查URL是否正确
+4. 根据截图调整策略
+
+## 与之前版本对比
+
+| 特性 | V4.2 | V4.3 | V4.4 |
+|------|------|------|------|
+| 采集数量 | 100 | 100 | 10 |
+| 点击方法 | 1种 | 3种 | 3种 |
+| 调试截图 | 无 | 失败时 | 每一步 |
+| URL验证 | 无 | 无 | 有 |
+| 适用场景 | 生产 | 生产 | 测试 |
+
+## 总结
+
+V4.4 是**调试增强版本**，用于快速测试：
+- 只采集10条（快速）
+- 自动保存每一步截图（详细）
+- 验证URL是否正确（准确）
+
+这样可以快速诊断为什么没有进入笔记详情页。

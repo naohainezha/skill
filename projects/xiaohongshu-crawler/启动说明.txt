@@ -1,0 +1,88 @@
+========================================
+  小红书爬虫 V4.0 - 启动说明
+========================================
+
+【环境检查已通过】✓
+
+【最简单启动方式】
+
+1. 打开命令行（Win+R -> cmd -> 回车）
+
+2. 夓入命令并按回车：
+   cd D:\xiaohongshu-crawler
+
+3. 输入命令并按回车：
+   python crawler_v4.py
+
+4. 等待浏览器打开
+
+5. 使用小红书APP扫码登录
+
+6. 等待采集完成（7-10分钟）
+
+7. 查看 output 目录的结果
+
+---
+
+【其他启动方式】
+
+方式1: 双击 start_v4.py
+方式2: 双击 go_v4.bat
+方式3: 双击 check_env_v4.py（环境检查）
+
+---
+
+【文件位置】
+
+D:\xiaohongshu-crawler\
+├── crawler_v4.py       ← 主程序
+├── .env               ← 配置
+├── start_v4.py        ← 启动器
+├── go_v4.bat          ← 批处理
+├── check_env_v4.py    ← 环境检查
+└── output/            ← 输出（自动创建）
+
+---
+
+【输出文件】
+
+output/notes_YYYYMMDD_HHMMSS.json
+output/notes_YYYYMMDD_HHMMSS.csv
+output/debug/*.png  ← 调试截图
+output/debug/*.html ← 调试HTML
+
+---
+
+【修改配置】
+
+编辑 .env 文件：
+
+KEYWORDS=眼镜          # 搜索关键词
+TARGET_COUNT=100        # 采集数量
+SLEEP_BETWEEN_REQUESTS=3.5  # 请求延迟
+SLEEP_BETWEEN_SCROLLS=1.5    # 滚动延迟
+
+---
+
+【问题排查】
+
+Q: 提示模块未安装？
+A: 运行：pip install -r requirements_refined.txt
+
+Q: 提示浏览器未安装？
+A: 运行：playwright install chromium
+
+Q: 采集失败？
+A: 查看 output/debug/ 目录的截图
+
+---
+
+【详细文档】
+
+- 使用指南_V4.md
+- V4_QUICKSTART.md
+- V4_GUIDE.md
+
+========================================
+推荐：在命令行运行 python crawler_v4.py
+========================================

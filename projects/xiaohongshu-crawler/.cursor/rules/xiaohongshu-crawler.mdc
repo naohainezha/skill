@@ -1,0 +1,82 @@
+# 小红书爬虫 Skill
+
+## 功能描述
+自动采集小红书笔记内容，支持关键词搜索、智能点击、内容提取和数据导出。
+
+## 项目路径
+`D:\xiaohongshu-crawler`
+
+## 快速使用
+
+### 1. 搜索并采集笔记
+当用户说"搜索小红书关键词XXX"或"采集小红书XXX相关笔记"时，执行以下步骤：
+
+```bash
+cd D:\xiaohongshu-crawler
+
+# 修改 .env 文件中的 KEYWORDS 和 TARGET_COUNT
+# 然后运行爬虫
+python crawler_v4.py
+```
+
+### 2. 配置参数说明
+配置文件：`D:\xiaohongshu-crawler\.env`
+
+| 参数 | 说明 | 示例 |
+|------|------|------|
+| KEYWORDS | 搜索关键词（多个用逗号分隔） | 眼镜,墨镜 |
+| TARGET_COUNT | 采集数量 | 10 |
+| LOGIN_TIMEOUT | 登录等待时间（秒） | 600 |
+| HEADLESS | 是否无头模式 | false |
+
+### 3. 修改关键词和数量的操作
+```python
+# 修改 .env 文件
+KEYWORDS=新关键词
+TARGET_COUNT=数量
+```
+
+## 输出结果
+- JSON文件：`output/notes_YYYYMMDD_HHMMSS.json`
+- CSV文件：`output/notes_YYYYMMDD_HHMMSS.csv`
+- 调试截图：`output/debug/`
+
+## 数据字段
+- keyword: 搜索关键词
+- title: 笔记标题
+- content: 笔记内容
+- url: 笔记链接
+- likes: 点赞数
+- author: 作者
+- created_at: 发布时间
+- collected_at: 采集时间
+
+## 常用操作示例
+
+### 示例1：采集10条"眼镜"相关笔记
+1. 修改 `.env`：
+   - KEYWORDS=眼镜
+   - TARGET_COUNT=10
+2. 运行：`python crawler_v4.py`
+
+### 示例2：采集多个关键词
+1. 修改 `.env`：
+   - KEYWORDS=眼镜,墨镜,太阳镜
+   - TARGET_COUNT=20
+2. 运行：`python crawler_v4.py`
+
+### 示例3：首次使用（需要登录）
+1. 确保 `HEADLESS=false`
+2. 运行爬虫后，在弹出的浏览器中扫码登录
+3. 登录成功后，Cookie会自动保存到 `cookies.json`
+
+## 注意事项
+1. 首次运行需要扫码登录小红书
+2. Cookie 保存在 `cookies.json`，如果失效需删除后重新登录
+3. 采集间隔已内置随机延迟，模拟人类行为
+4. 如遇验证码，脚本会暂停等待手动处理
+
+## 故障排除
+- **登录失效**：删除 `cookies.json`，重新运行
+- **采集失败**：检查 `output/debug/` 下的截图
+- **页面加载慢**：增大 `PAGE_LOAD_TIMEOUT` 值

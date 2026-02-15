@@ -1,0 +1,14 @@
+import json
+import os
+
+path = r"D:\ComfyUI-aki-v1.6-XZG torch2.7 cuda12.6 Nunchaku0.3.1\ComfyUI\user\default\workflows\提示词反推.json"
+
+with open(path, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+for node in data['nodes']:
+    print(f"ID: {node['id']}, Type: {node['type']}")
+    if node.get('inputs'):
+        print(f"  Inputs: {node['inputs']}")
+    if node.get('widgets_values'):
+        print(f"  Widgets: {node['widgets_values']}")
