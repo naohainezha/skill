@@ -1,0 +1,11 @@
+{
+  "work_path": "C:\\Users\\admin\\XHS-Downloader\\Volume",
+  "folder_name": "Download",
+  "name_format": "发布时间 作者昵称 作品标题",
+  "image_format": "PNG",
+  "image_download": true,
+  "video_download": true,
+  "download_record": true,
+  "folder_mode": false,
+  "author_archive": false
+}

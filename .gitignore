@@ -1,0 +1,21 @@
+# Sensitive files
+.env
+cookies.json
+cookies.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# Media
+*.mp4
+*.webm
+*.avi
+*.mkv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp

@@ -1,0 +1,59 @@
+[
+  {
+    "note_index": 1,
+    "note_title": "👓眼镜党必看！3套高智感穿搭公式✨",
+    "prompts": [
+      {
+        "zh": "一张来自小红书的穿搭照片，展示一位亚洲年轻女性戴着黑色大框眼镜，穿着一件简洁的白色衬衫，搭配深色西装裤，站在明亮的办公室环境中。她的妆容自然清新，表情自信干练，散发出一种职业又不失亲和力的氛围。拍摄角度是正面半身像，光线柔和自然，画面清晰细腻，细节丰富，具有典型的小红书生活美学风格。",
+        "en": "A Xiaohongshu-style fashion photo featuring an Asian young woman wearing black wide-frame glasses and a simple white shirt paired with dark suit trousers. She stands in a bright office environment with naturally fresh makeup and a confident yet approachable expression, radiating a professional yet friendly atmosphere. The photo is a front three-quarter shot with soft natural lighting, clear and delicate details, and rich textures, embodying the typical Xiaohongshu lifestyle aesthetic."
+      },
+      {
+        "zh": "温馨的咖啡店场景，一位亚洲年轻女性坐在木质桌前，她佩戴着一副圆形的金属丝眼镜，身上穿着米白色的针织上衣，搭配牛仔裤。她手里端着一杯拿铁咖啡，脸上带着温柔的微笑，侧脸角度完美。光线温暖柔和，营造出舒适的氛围，画面细节丰富，具有治愈系的小红书风格。",
+        "en": "A cozy café scene showing an Asian young woman sitting at a wooden table wearing round gold-wire glasses, dressed in a beige knit shirt paired with jeans. She holds a latte coffee cup with a gentle smile, captured at a perfect side profile angle. The warm and soft lighting creates a comfortable atmosphere with rich details, embodying the healing Xiaohongshu style."
+      },
+      {
+        "zh": "户外周末休闲场景，一位亚洲年轻女性穿着宽松的连帽衫，戴着一副简约的半框眼镜，站在阳光明媚的街道上。她的妆容清新自然，表情轻松惬意，展现着青春活力的状态。拍摄角度是全身或大半身，光线自然明亮，画面清新自然，具有小红书年轻感的生活美学。",
+        "en": "An outdoor weekend leisure scene featuring an Asian young woman in an oversized hoodie wearing simple semi-rimless glasses, standing on a sunlit street. Her makeup is fresh and natural, with a relaxed expression showing youthful vitality. The photo is a full or three-quarter shot with bright natural lighting and a fresh, natural composition, embodying the youthful Xiaohongshu lifestyle aesthetic."
+      }
+    ],
+    "model": "Default Template (Flux/QwenImage style)"
+  },
+  {
+    "note_index": 2,
+    "note_title": "听劝👂各脸型的本命眼镜终于找齐了！",
+    "prompts": [
+      {
+        "zh": "一张小红书风格的人像摄影作品，展示一位圆脸的亚洲年轻女性，她戴着黑色的方框眼镜，眼镜的棱角感很好地修饰了她的脸型，让脸看起来更小更精致。她的妆容精致但不夸张，眼神明亮有神，背景是干净的摄影棚。光线柔和均匀，画面细节丰富，8K高画质，超写实风格。",
+        "en": "A Xiaohongshu-style portrait photograph showcasing an Asian young woman with a round face wearing black square-frame glasses. The angular design of the glasses perfectly contours her face shape, making it appear smaller and more refined. Her makeup is sophisticated but not excessive, with bright and spirited eyes against a clean studio background. The soft and even lighting produces rich details in 8K ultra-high definition with a photorealistic style."
+      },
+      {
+        "zh": "优雅的氛围照片，一位方脸的亚洲年轻女性佩戴圆形的金属丝眼镜，金丝框的精致感提升了整体的气质。她的妆容优雅得体，表情温和自信，背景是简约的室内空间。光线自然柔和，画面4K超写实，细节清晰，营造出一种精致优雅的美感。",
+        "en": "An elegant atmospheric photograph featuring a square-faced Asian young woman wearing round metal wire glasses. The delicate gold-wire frame enhances the overall sophistication. Her makeup is elegant and appropriate, with a gentle and confident expression set against a minimalist interior space. The natural soft lighting produces 4K photorealistic images with clear details, creating a refined and elegant aesthetic."
+      },
+      {
+        "zh": "潮流时尚的照片，一位鹅蛋脸的亚洲年轻女性戴着玳瑁色的眼镜，站在户外的自然环境中。她的造型时尚个性，妆容精致而不夸张，笑容灿烂自然。光线明亮柔和，画面高画质，细节丰富，展现出一种潮流时尚的生活态度。",
+        "en": "A trendy fashion photograph showing an oval-faced Asian young woman wearing tortoise-shell glasses in an outdoor natural environment. Her styling is fashionable and individual, with exquisite yet not excessive makeup and a bright natural smile. The bright and soft lighting creates high-quality images with rich details, showcasing a trendy and fashionable lifestyle attitude."
+      }
+    ],
+    "model": "Default Template (Flux/QwenImage style)"
+  },
+  {
+    "note_index": 3,
+    "note_title": "☕️戴眼镜也能氛围感拉满！4个场景搞定",
+    "prompts": [
+      {
+        "zh": "氛围感十足的咖啡店照片，一位亚洲年轻女性穿着米白色的针织衫，戴着圆形的金丝眼镜，在咖啡店拿着咖啡杯，侧颜的角度。温暖的光线透过窗户洒在她身上，营造出梦幻而温馨的氛围。她的表情温柔治愈，画面细节丰富，8K高画质，具有小红书氛围感。",
+        "en": "An atmospheric café photograph showing an Asian young woman in a beige knit shirt wearing round gold-wire glasses at a coffee shop, holding a coffee cup at a side profile angle. Warm sunlight filters through the window illuminating her, creating a dreamy and cozy atmosphere. Her expression is gentle and healing with rich details in 8K high definition, full of atmospheric vibes."
+      },
+      {
+        "zh": "图书馆场景的高智感照片，一位亚洲年轻女性穿着白衬衫，戴着黑色的半框眼镜，在图书馆的书架前学习。她的表情专注而沉稳，眼镜增添了知性的气质。背景是整齐的书架和学习环境，光线柔和明亮，画面4K超写实，细节清晰，展现出一种静谧专注的学习氛围。",
+        "en": "An intelligent-vibe library scene photograph featuring an Asian young woman in a white shirt and black semi-rimless glasses, studying in front of bookshelves in a library. Her expression is focused and composed, with the glasses adding an intellectual touch. The background features neatly arranged bookshelves and a study environment with soft bright lighting, producing 4K photorealistic images with clear details, showcasing a quiet and focused learning atmosphere."
+      },
+      {
+        "zh": "逛街的治愈系照片，一位亚洲年轻女性穿着碎花连衣裙，戴着玳瑁色的眼镜，走在购物街上。她的笑容灿烂自然，充满生活气息。阳光洒在身上，光线明亮柔和，街道的背景干净整洁。画面8K高画质，细节丰富，营造出一种轻松愉快的周末逛街氛围。",
+        "en": "A healing weekend shopping photograph showing an Asian young woman in a floral dress wearing tortoise-shell glasses walking along a shopping street. Her bright and natural smile is full of life and energy. Sunlight illuminates her with bright and soft lighting against a clean and tidy street background. The 8K high-quality image with rich details creates a relaxed and pleasant weekend shopping atmosphere."
+      }
+    ],
+    "model": "Default Template (Flux/QwenImage style)"
+  }
+]

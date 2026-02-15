@@ -1,0 +1,59 @@
+[
+  {
+    "note_index": 1,
+    "note_title": "👓眼镜党必看！3套高智感穿搭公式✨",
+    "prompts": [
+      {
+        "zh": "亚洲年轻女性，白衬衫，黑色大框眼镜，职业商务风格，办公室背景，自然柔和光线，高画质，8K，细节丰富，小红书风格",
+        "en": "Asian young woman, white shirt, black wide frame glasses, professional business style, office background, soft natural lighting, high quality, 8k, detailed, photorealistic, Xiaohongshu style"
+      },
+      {
+        "zh": "年轻女性，米白色针织衫，圆形金属眼镜，柔光，咖啡店背景，温柔微笑，肖像照，4K，细节丰富，温暖治愈感",
+        "en": "Young woman, beige knitwear, round metal glasses, soft warm lighting, coffee shop background, gentle smile, portrait, 4k, detailed, warm healing vibe"
+      },
+      {
+        "zh": "年轻女性，宽松连帽衫，半框眼镜，休闲风格，周末氛围，自然光线，户外，高画质，清新自然",
+        "en": "Young woman, oversized hoodie, semi-rimless glasses, casual style, weekend vibe, natural lighting, outdoor, high quality, fresh and natural"
+      }
+    ],
+    "model": "Default Template"
+  },
+  {
+    "note_index": 2,
+    "note_title": "听劝👂各脸型的本命眼镜终于找齐了！",
+    "prompts": [
+      {
+        "zh": "亚洲年轻女性，圆脸，黑色方框眼镜，时尚风格，摄影棚灯光，肖像照，8K，细节丰富，显脸小",
+        "en": "Asian young woman, round face, black square frame glasses, fashion style, studio lighting, portrait, 8k, detailed, face slimming"
+      },
+      {
+        "zh": "年轻女性，方脸，圆形金属眼镜，金丝框，优雅风格，自然光线，4K，超写实，精致优雅",
+        "en": "Young woman, square face, round metal glasses, gold frame, elegant style, natural lighting, 4k, photorealistic, refined and elegant"
+      },
+      {
+        "zh": "年轻女性，鹅蛋脸，玳瑁色眼镜，潮流风格，户外背景，柔和光线，高画质，潮流时尚",
+        "en": "Young woman, oval face, tortoise shell glasses, trendy style, outdoor background, soft lighting, high quality, trendy and fashionable"
+      }
+    ],
+    "model": "Default Template"
+  },
+  {
+    "note_index": 3,
+    "note_title": "☕️戴眼镜也能氛围感拉满！4个场景搞定",
+    "prompts": [
+      {
+        "zh": "亚洲年轻女性，米白色针织衫，圆形金丝眼镜，咖啡店，拿咖啡杯，侧颜，温暖光线，8K，细节丰富，氛围感",
+        "en": "Asian young woman, beige knitwear, round gold wire glasses, coffee shop, holding coffee cup, side profile, warm lighting, 8k, detailed, atmospheric vibe"
+      },
+      {
+        "zh": "年轻女性，白衬衫，黑色半框眼镜，图书馆背景，学习，专注，柔光，4K，超写实，高智感",
+        "en": "Young woman, white shirt, black semi-rimless glasses, library background, studying, focused, soft lighting, 4k, photorealistic, intelligent vibe"
+      },
+      {
+        "zh": "年轻女性，碎花连衣裙，玳瑁色眼镜，购物街，自然光线，微笑，高画质，8K，治愈系",
+        "en": "Young woman, floral dress, tortoise shell glasses, shopping street, natural lighting, smiling, high quality, 8k, healing style"
+      }
+    ],
+    "model": "Default Template"
+  }
+]
